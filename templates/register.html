@@ -1,0 +1,14 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Employee Registration</title><style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:20px;background:#f3f6fb;font-family:Arial,sans-serif;color:#172033}
+.card{width:100%;max-width:470px;background:white;padding:30px;border-radius:15px;box-shadow:0 10px 30px #17203318}
+h1{margin-top:0}p{color:#64748b;font-size:14px;line-height:1.5}label{display:block;margin:14px 0 6px;font-weight:600;font-size:14px}
+input{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:8px;font:inherit}button{width:100%;padding:12px;margin-top:20px;background:#1765b3;color:white;border:0;border-radius:8px;font-weight:bold;cursor:pointer}
+.error{background:#fff1f2;color:#9f1239;padding:10px;border-radius:8px}.foot{margin-top:18px;font-size:13px}
+</style></head><body><main class="card"><h1>Employee Registration</h1>
+<p>Enter your employee ID and exact name as recorded by HR.</p>{% if error %}<div class="error">{{ error }}</div>{% endif %}
+<form method="post" action="/register"><label>Employee ID</label><input type="number" name="employee_id" min="1" required>
+<label>Full name</label><input name="name" minlength="2" maxlength="80" pattern="[A-Za-z][A-Za-z .-]{0,78}[A-Za-z]" required><label>Email address</label><input type="email" name="email" required>
+<label>Create password (minimum 8 characters)</label><input type="password" name="password" minlength="8" required>
+<label>Confirm password</label><input type="password" name="confirm_password" minlength="8" required>
+<button type="submit">Create employee account</button></form><div class="foot"><a href="/login">Back to login</a></div></main></body></html>

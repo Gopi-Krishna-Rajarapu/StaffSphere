@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.py[cod]
+.env
+employees.txt
+employee_accounts.txt
+payroll_records.txt
+leave_records.txt
+test_gemini.py

@@ -1,0 +1,15 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StaffSphere | Login</title><style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:20px;font-family:Arial,sans-serif;background:linear-gradient(135deg,#eaf1fb,#f7f9fc);color:#172033}
+.card{width:100%;max-width:430px;background:white;padding:32px;border-radius:16px;box-shadow:0 12px 35px #17203318}
+.logo{width:54px;height:54px;display:grid;place-items:center;margin:0 auto 12px;border-radius:14px;background:#173b67;color:white;font-size:24px;font-weight:bold}
+h1{text-align:center;font-size:23px;margin:0 0 8px}.muted{text-align:center;color:#64748b;font-size:14px;margin-bottom:22px}
+label{display:block;margin:16px 0 7px;font-weight:600;font-size:14px}input,select{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:8px;font:inherit}
+button{display:block;width:100%;margin-top:18px;padding:13px;border:0;border-radius:8px;background:#1765b3;color:white;font-weight:bold;cursor:pointer}
+.error{padding:11px;border-radius:8px;margin:15px 0;background:#fff1f2;color:#9f1239;font-size:14px}.foot{text-align:center;margin-top:20px;font-size:13px;color:#64748b}
+</style></head><body><main class="card"><div class="logo">EP</div><h1>StaffSphere</h1><div class="muted">Sign in to your account</div>
+{% if error %}<div class="error">{{ error }}</div>{% endif %}
+<form method="post" action="/login"><label>Login as</label><select name="role" required><option value="employee">Employee</option><option value="hr">HR Admin</option></select>
+<label>Email address</label><input name="email" type="email" required autocomplete="username" placeholder="Enter your email">
+<label>Password</label><input name="password" type="password" required autocomplete="current-password" placeholder="Enter your password">
+<button type="submit">Sign in</button></form><div class="foot">New employee? <a href="/register">Create an account</a></div></main></body></html>
